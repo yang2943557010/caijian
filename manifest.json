@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Temu前端一键搬家",
+  "version": "1.0",
+  "description": "一键收集Temu商品信息的浏览器插件",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.temu.com/*"
+  ],
+  "action": {
+    "default_icon": {}
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.temu.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+} 
